@@ -1,0 +1,91 @@
+{
+    "csa_main":{
+        "name":"CSA",
+        "x":-6403,"z":3504,"type":"stopjunction",
+        "dest":"csa",
+        "dest_junction":"csa:j",
+        "horse":true
+    },
+    "little_leningrad":{
+        "name":["Little Leningrad","LL"],
+        "x":-6682,"z":3366,"type":"stop",
+        "dest":"ll"
+    },
+    "fuzzy_quarter":{
+        "name":["Fuzzy Quarter","FQ"],
+        "x":-5656,"z":2943,"type":"stop",
+        "dest":"fq",
+        "horse":true
+    },
+    "fq-crossing":{
+        "x":-5637,"z":2911,"type":"crossing"
+    },
+    "mount_september":{
+        "name":["Mount September","MtS"],
+        "x":-4947,"z":2215,"type":"stopjunction",
+        "dest":"september",
+        "dest_junction":"sept:thru"
+    },
+    "south_augusta":{
+        "name":["South Augusta","SA"],
+        "x":-6145,"z":3775,"type":"junction",
+        "dest":"sa",
+        "surface":true
+    },
+    "sawc":{
+        "name":["South Augusta Walled City","SAWC"],
+        "x":-6145,"z":3775,"type":"stop",
+        "dest":"sawc",
+        "surface":true
+    },
+    "mount_augusta-surface":{
+        "name":["Mount Augusta (Surface)","MtA (Surface)","Mount Augusta","MtA"],
+        "x":-6702,"z":3024,"type":"stop",
+        "dest":"mta",
+        "surface":true
+    },
+    "september-crossing":{
+        "x":-5575,"z":2023,"type":"crossing",
+        "surface":true
+    },
+    "mts_lazuli":{
+        "name":["MtS Lazuli","Lazuli"],
+        "x":-5575,"z":2320,"type":"stop",
+        "dest":"mts:lazuli",
+        "surface":true
+    },
+    "mts_southfarms":{
+        "name":["MtS South Farms","South Farms"],
+        "x":-4938,"z":2386,"type":"stop",
+        "dest":"mts-southfarms",
+        "surface":true
+    },
+    "mount_september-surface":{
+        "name":["Mount September (Surface)","MtS (Surface)"],
+        "x":-5575,"z":2320,"type":"stop",
+        "dest":"september",
+        "surface":true
+    },
+    "mts_eastvillage":{
+        "name":["MtS East Villge","East Village"],
+        "x":-4868,"z":2185,"type":"stop",
+        "dest":"mts:eastvillage",
+        "surface":true
+    },
+    "little_ukraine":{
+        "name":["Little Ukraine","LUk"],
+        "x":-6555,"z":3375,"type":"stop",
+        "dest":"luk",
+        "surface":true
+    },
+    "little_hellsinki":{
+        "name":["Little Hellsinki","LHell"],
+        "x":-5082,"z":3636,"type":"stop",
+        "dest":"lhell"
+    },
+    "little_mushie":{
+        "name":["Little Mushie","LMushie","LMush"],
+        "x":-2711,"z":3636,"type":"stop",
+        "dest":"lmushie"
+    }
+}

@@ -1,0 +1,47 @@
+[
+    {"points":[
+        "south_augusta",
+        "mount_september"
+    ]},
+    {"points":[
+        "south_augusta",
+        "sawc"
+    ]},
+    {"points":[
+        "mount_september",
+        "fq-crossing"
+    ]},
+    {"name":"GOR","dest_a":"gor:south","dest_b":"gor:north","surface":true,
+     "points":[
+         "south_augusta",
+         "csa_main",
+         "little_ukraine",
+         "mount_augusta-surface",
+         "september-crossing"
+     ]
+    },
+    {"name":"MtS Monorail","dest_a":"","dest_b":"september","surface":true,
+        "points":[
+            "september-crossing",
+            "mts_lazuli",
+            "mts_southfarms",
+            "mount_september-surface",
+            "mts_eastvillage"
+        ]
+    },
+    {"name":"CSR","dest_a":"csr:west","dest_b":"csr:east",
+        "points":[
+            "little_leningrad",
+            "csa_main",
+            "fuzzy_quarter",
+            "fq-crossing"
+        ]
+    },
+    {"name":"Pripyat Rail","dest_a":"prip:east","dest_b":"prip:west",
+        "points":[
+            "csa_main",
+            "little_hellsinki",
+            "little_mushie"
+        ]
+    }
+]

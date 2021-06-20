@@ -44,5 +44,23 @@
             "little_mushie",
             "pripyat"
         ]
-    }
+    },
+    {"name":"HITS","dest_a":"hits:north","dest_b":"hits:south",
+        "points":[
+            "impasse",
+            "lusitania-junction",
+            "atlantis-junction",
+            "el_norte",
+            "el_capitolio",
+            "kings_landing_junction",
+            "christmas_junction",
+            "mount_augusta",
+            "westminster",
+            "airhaven",
+            "hjaltland"
+        ]
+    },
+    {"points":["lusitania","lusitania-junction"]},
+    {"points":["atlantis","atlantis-junction"]},
+    {"points":["mount_september","christmas_junction"]}
 ]

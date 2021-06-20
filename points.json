@@ -39,7 +39,7 @@
         "surface":true
     },
     "mount_augusta-surface":{
-        "name":["Mount Augusta (Surface)","MtA (Surface)","Mount Augusta","MtA"],
+        "name":["Mount Augusta (Surface)","MtA (Surface)"],
         "x":-6702,"z":3024,"type":"stop",
         "dest":"mta",
         "surface":true
@@ -92,5 +92,63 @@
         "name":"Pripyat",
         "x":6250,"z":2400,"type":"stop",
         "dest":"pripyat"
+    },
+    "impasse":{
+        "name":"Impasse",
+        "x":-6678,"z":-5127,"type":"stop",
+        "dest":"impasse"
+    },
+    "lusitania-junction":{
+        "x":-6711,"z":-3600,"type":"crossing"
+    },
+    "lusitania":{
+        "name":"Lusitania",
+        "x":-7748,"z":-3540,"type":"stop",
+        "dest":"lusitania"
+    },
+    "atlantis-junction":{
+        "x":-6711,"z":-2700,"type":"crossing"
+    },
+    "atlantis":{
+        "name":"Atlantis",
+        "x":-7102,"z":-2764,"type":"stop",
+        "dest":"atlantis"
+    },
+    "el_norte":{
+        "name":"El Norte",
+        "x":-6382,"z":-2052,"type":"stop",
+        "dest":"el_norte"
+    },
+    "el_capitolio":{
+        "name":"El Capitolio",
+        "x":-6340,"z":-1550,"type":"stop",
+        "dest":"el_capitolio"
+    },
+    "kings_landing_junction":{
+        "x":-6700,"z":0,"type":"crossing"
+    },
+    "christmas_junction":{
+        "x":-6700,"z":800,"type":"crossing"
+    },
+    "mount_augusta":{
+        "name":["Mount Augusta","MtA"],
+        "x":-6713,"z":2955,"type":"stop",
+        "dest":"mta"
+    },
+    "westminster":{
+        "name":"Westminster",
+        "x":-7000,"z":5000,"type":"stop",
+        "dest":"westminster"
+    },
+    "airhaven":{
+        "name":"Airhaven",
+        "x":-5667,"z":9115,"type":"stop",
+        "dest":"airhaven"
+    },
+    "hjaltland":{
+        "name":"Hjaltlan",
+        "x":-2941,"z":10794,"type":"stop",
+        "dest":"hjaltland"
     }
+
 }

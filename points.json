@@ -87,5 +87,10 @@
         "name":["Little Mushie","LMushie","LMush"],
         "x":-2711,"z":3636,"type":"stop",
         "dest":"lmushie"
+    },
+    "pripyat":{
+        "name":"Pripyat",
+        "x":6250,"z":2400,"type":"stop",
+        "dest":"pripyat"
     }
 }

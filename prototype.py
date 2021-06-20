@@ -43,5 +43,17 @@ def main(argv):
     else:
         print ('prototype.py --help')
 
-if __name__ == "__main__":
-   main(sys.argv[1:])
+#if __name__ == "__main__":
+#   main(sys.argv[1:])
+
+graph1 = Graph(points,lines)
+calculated = {}
+
+for p1 in points:
+    for p2 in points:
+        if points[p1]['type'] != 'crossing' and points[p2]['type'] != 'crossing':
+            path,dest = graph1.a_star_algorithm(p1,p2)
+            calculated["{} - {}".format(p1,p2)] = "/dest {}".format(" ".join(dest))
+
+with open('computed.json','w') as f:
+    f.write(json.dumps(calculated))

@@ -1,4 +1,4 @@
-from math import hypot
+from math import e, hypot
 from collections import deque
 
 class Graph:
@@ -14,29 +14,37 @@ class Graph:
         adjac_lis = {}
         for line in self.lines:
             ps = line['points']
+            # Line name, either using the line's name or generating one if direct connection 
+            if 'name' in line:
+                line_name = line['name']
+            else:
+                line_name = '{} - {}'.format(ps[0],ps[-1])
+
             # Iterate all points in the line
             for i in range(len(ps)):
                 p = ps[i]
                 p_data = self.points[p]
+
                 dat = []
                 if p in adjac_lis:  # check if this point has already been added
                     dat = adjac_lis[p]
-                # Point A
+
+                # Dest A
                 if i > 0:
                     n_data = self.points[ps[i-1]]
                     d = hypot(p_data['x']-n_data['x'],p_data['z']-n_data['z'])
                     if 'dest_a' in line:
-                        dat.append((ps[i-1],d,line['dest_a']))
+                        dat.append((ps[i-1],d,line['dest_a'],line_name))
                     else:
-                        dat.append((ps[i-1],d,self.get_dest(ps[0])))
-                # Point B
+                        dat.append((ps[i-1],d,self.get_dest(ps[0]),line_name))
+                # Dest B
                 if i < len(ps) - 1:
                     n_data = self.points[ps[i+1]]
                     d = hypot(p_data['x']-n_data['x'],p_data['z']-n_data['z'])
                     if 'dest_b' in line:
-                        dat.append((ps[i+1],d,line['dest_b']))
+                        dat.append((ps[i+1],d,line['dest_b'],line_name))
                     else:
-                        dat.append((ps[i+1],d,self.get_dest(ps[-1])))
+                        dat.append((ps[i+1],d,self.get_dest(ps[-1]),line_name))
 
                 adjac_lis[p] = dat
 
@@ -48,11 +56,11 @@ class Graph:
         self.adjac_lis = self.generate_nodes()
         
  
-    def get_neighbors(self, v):
+    def get_neighbors(self, v, line=None):
         return self.adjac_lis[v]
  
     # This is heuristic function which is having equal values for all nodes
-    def h(self, n): 
+    def h(self, n):
         #return H[n]
         return 1
 
@@ -97,7 +105,7 @@ class Graph:
  
         # par contains an adjac mapping of all nodes
         par = {}
-        par[start] = (start,None)
+        par[start] = (start,None,None)
  
         while len(open_lst) > 0:
             n = None
@@ -116,9 +124,8 @@ class Graph:
             if n == stop:
                 reconst_path = []
                 dest = []
-                #dest = [stop]
-                last_dest = ''
-                #print("pars",par)
+
+                #print(par)
  
                 while par[n][0] != n:
                     reconst_path.append(n)
@@ -127,17 +134,22 @@ class Graph:
                 reconst_path.append(start)
                 reconst_path.reverse()
 
+                # Generating the /dest command 
                 last_dest = None
                 last_point = None
+                last_line = None
                 for point in reconst_path:
+                    this_line = par[point][2]
                     this_dest = par[point][1]
-                    if this_dest != None and last_dest != None and this_dest != last_dest:
+                    if this_line != last_line and this_line != None and last_point != start:
                         dest = self.add_to_dest(dest,last_point)
                     if this_dest != None:
                         dest = self.add_to_dest(dest,this_dest)
 
-                    last_dest = this_dest
                     last_point = point
+                    last_line = this_line
+                    last_dest = this_dest
+                    
                 
                 dest = self.add_to_dest(dest,stop,stop=True)
 
@@ -145,33 +157,32 @@ class Graph:
                 #print(dest)
                 print("/dest {}".format(" ".join(dest)))
                 return reconst_path,dest
- 
+
             # for all the neighbors of the current node do
-            for (m, weight, dest) in self.get_neighbors(n):
-              # if the current node is not presentin both open_lst and closed_lst
-                # add it to open_lst and note n as it's par
-                if m not in open_lst and m not in closed_lst:
-                    open_lst.add(m)
-                    par[m] = (n,dest)
-                    poo[m] = poo[n] + weight
- 
-                # otherwise, check if it's quicker to first visit n, then m
-                # and if it is, update par data and poo data
-                # and if the node was in the closed_lst, move it to open_lst
-                else:
-                    if poo[m] > poo[n] + weight:
+            for (m, weight, dest,line) in self.get_neighbors(n):
+                if line == par[n][2] or self.points[n]['type'] != 'stop' or n == start:
+                    # if the current node is not presentin both open_lst and closed_lst
+                    # add it to open_lst and note n as it's par
+                    if m not in open_lst and m not in closed_lst:
+                        open_lst.add(m)
+                        par[m] = (n,dest,line)
                         poo[m] = poo[n] + weight
-                        par[m] = (n,dest)
- 
-                        if m in closed_lst:
-                            closed_lst.remove(m)
-                            open_lst.add(m)
-                #if par[n][1] != None and par[m][1] != None and par[n][1] != par[m][1]:
-                #    par[m] = (par[m][0],"{} {}".format(par[m][0],par[m][1]))
+
+                    # otherwise, check if it's quicker to first visit n, then m
+                    # and if it is, update par data and poo data
+                    # and if the node was in the closed_lst, move it to open_lst
+                    else:
+                        if poo[m] > poo[n] + weight:
+                            par[m] = (n,dest,line)
+                            poo[m] = poo[n] + weight
+
+                            if m in closed_lst:
+                                closed_lst.remove(m)
+                                open_lst.add(m)
             # remove n from the open_lst, and add it to closed_lst
-            # because all of his neighbors were inspected
+            # because all of its neighbors were inspected
             open_lst.remove(n)
             closed_lst.add(n)
  
         print('Path does not exist!')
-        return None
+        return None,None

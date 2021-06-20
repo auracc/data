@@ -146,7 +146,7 @@
         "dest":"airhaven"
     },
     "hjaltland":{
-        "name":"Hjaltlan",
+        "name":"Hjaltland",
         "x":-2941,"z":10794,"type":"stop",
         "dest":"hjaltland"
     }

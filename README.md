@@ -1,3 +1,1 @@
-# AURA
-
 AURA data repo

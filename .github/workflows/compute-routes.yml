@@ -21,6 +21,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      - name: Get current date
+        id: date
+        run: echo "$(date +'%Y-%m-%d')"
 
       # Install Python
       - name: setup python
@@ -30,19 +33,11 @@ jobs:
           
       - name: execute route compute script
         run: python prototype.py
-        
-      - name: commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git commit -m "update data" -a
-          
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
+      
+      - name: Commits the data to the Repo
+        uses: EndBug/add-and-commit@v7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main  
-      
-      
-
+          author_name: Github Actions
+          author_email: github_actions@github.com
+          message: Compute Routes .JSON
+          add: 'computed.json'

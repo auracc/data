@@ -3,7 +3,7 @@
         "name":"CSA",
         "x":-6403,"z":3504,"type":"stopjunction",
         "dest":".csa",
-        "dest_junction":"csa:j",
+        "dest_junction":".csa:j",
         "horse":true
     },
     "little_leningrad":{
@@ -24,7 +24,7 @@
         "name":["Mount September","MtS"],
         "x":-4947,"z":2215,"type":"stopjunction",
         "dest":".september",
-        "dest_junction":"sept:thru"
+        "dest_junction":".sept:thru"
     },
     "south_augusta":{
         "name":["South Augusta","SA"],
@@ -149,6 +149,16 @@
         "name":"Hjaltland",
         "x":-2941,"z":10794,"type":"stop",
         "dest":".hjaltland"
+    },
+    "carson":{
+        "name":"Carson",
+        "x":4200,"z":1750,"type":"stop",
+        "dest":".carson"
+    },
+    "carson-switch-1":{
+        "x":4200,"z":2340,"type":"crossing"
+    },
+    "carson-switch-2":{
+        "x":4200,"z":2500,"type":"crossing"
     }
-
 }

@@ -42,6 +42,7 @@
             "csa_main",
             "little_hellsinki",
             "little_mushie",
+            "carson-switch-2",
             "pripyat"
         ]
     },
@@ -60,6 +61,19 @@
             "hjaltland"
         ]
     },
+    {"name":"CIC","dest_a":"cic:south","dest_b":"cic:north",
+        "points":[
+            "carson-switch-1",
+            "carson"
+        ]
+    },
+    {"name":"ISLE","dest_a":"isle:east","dest_b":"isle:west",
+        "points":[
+            "pripyat",
+            "carson-switch-1"
+        ]
+    },
+    {"points":["carson-switch-2","carson-switch-1"]},
     {"points":["lusitania","lusitania-junction"]},
     {"points":["atlantis","atlantis-junction"]},
     {"points":["mount_september","christmas_junction"]}

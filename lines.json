@@ -37,7 +37,7 @@
             "fq-crossing"
         ]
     },
-    {"name":"Pripyat Rail","dest_a":"prip:east","dest_b":"prip:west",
+    {"name":"Pripyat Rail","dest_a":"prip:west","dest_b":"prip:east",
         "points":[
             "csa_main",
             "little_hellsinki",

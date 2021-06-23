@@ -1,80 +1,31 @@
-[
-    {"points":[
-        "south_augusta",
-        "mount_september"
-    ]},
-    {"points":[
-        "south_augusta",
-        "sawc"
-    ]},
-    {"points":[
-        "mount_september",
-        "fq-crossing"
-    ]},
-    {"name":"GOR","dest_a":"gor:south","dest_b":"gor:north","surface":true,
-     "points":[
-         "south_augusta",
-         "csa_main",
-         "little_ukraine",
-         "mount_augusta-surface",
-         "september-crossing"
-     ]
-    },
-    {"name":"MtS Monorail","dest_a":"","dest_b":"september","surface":true,
-        "points":[
-            "september-crossing",
-            "mts_lazuli",
-            "mts_southfarms",
-            "mount_september-surface",
-            "mts_eastvillage"
-        ]
-    },
-    {"name":"CSR","dest_a":"csr:west","dest_b":"csr:east",
+{   
+    "carson-prip":{"points":["carson-crossing-1","carson"]},
+    "mts-monorail":{"points":["september-crossing","mount_september-surface"]},
+
+    "csr":{"dest_a":"csr:west","dest_b":"csr:east",
         "points":[
             "little_leningrad",
             "csa_main",
             "fuzzy_quarter",
-            "fq-crossing"
+            "fq-crossing",
+            "mount_september"
         ]
     },
-    {"name":"Pripyat Rail","dest_a":"prip:west","dest_b":"prip:east",
+    "gor":{"dest_a":"gor:north","dest_b":"gor:south","surface":true,
+     "points":[
+        "september-crossing",
+        "mount_augusta-surface",
+        "little_ukraine",
+        "csa_main"
+     ]
+    },
+    "mta-pripyat":{"dest_a":"prip:west","dest_b":"prip:east",
         "points":[
             "csa_main",
             "little_hellsinki",
             "little_mushie",
-            "carson-switch-2",
+            "carson-crossing-1",
             "pripyat"
         ]
-    },
-    {"name":"HITS","dest_a":"hits:north","dest_b":"hits:south",
-        "points":[
-            "impasse",
-            "lusitania-junction",
-            "atlantis-junction",
-            "el_norte",
-            "el_capitolio",
-            "kings_landing_junction",
-            "christmas_junction",
-            "mount_augusta",
-            "westminster",
-            "airhaven",
-            "hjaltland"
-        ]
-    },
-    {"name":"CIC","dest_a":"cic:south","dest_b":"cic:north",
-        "points":[
-            "carson-switch-1",
-            "carson"
-        ]
-    },
-    {"name":"ISLE","dest_a":"isle:east","dest_b":"isle:west",
-        "points":[
-            "pripyat",
-            "carson-switch-1"
-        ]
-    },
-    {"points":["carson-switch-2","carson-switch-1"]},
-    {"points":["lusitania","lusitania-junction"]},
-    {"points":["atlantis","atlantis-junction"]},
-    {"points":["mount_september","christmas_junction"]}
-]
+    }
+}

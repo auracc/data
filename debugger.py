@@ -18,8 +18,7 @@ points,lines = load_data()
 def main(argv):
     start = None
     end =  None
-    
-    
+     
     try:
       opts, args = getopt.getopt(argv,"hf:t:l",["help","from=","to=","listpoints"])
     except getopt.GetoptError:
@@ -41,26 +40,7 @@ def main(argv):
         graph1 = Graph(points,lines)
         graph1.a_star_algorithm(start,end)
     else:
-        print ('prototype.py --help')
+        print ('debugger.py --help')
 
-#if __name__ == "__main__":
-#   main(sys.argv[1:])
-
-graph1 = Graph(points,lines)
-
-#graph1.a_star_algorithm('little_leningrad','little_ukraine')
-#graph1.a_star_algorithm('csa_main','little_ukraine')
-#graph1.a_star_algorithm('pripyat','mount_september')
-
-
-calculated = {}
-
-for p1 in points:
-    for p2 in points:
-        if points[p1]['type'] != 'crossing' and points[p2]['type'] != 'crossing':
-            path,dest = graph1.a_star_algorithm(p1,p2)
-            if path != None and dest != None:
-                calculated["{} - {}".format(p1,p2)] = "/dest {}".format(" ".join(dest))
-
-with open('computed.json','w') as f:
-    f.write(json.dumps(calculated))
+if __name__ == "__main__":
+   main(sys.argv[1:])

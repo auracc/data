@@ -12,13 +12,9 @@ class Graph:
     def generate_nodes(self):
         # ----- Generate the A* node list ----- (todo: add distance)
         adjac_lis = {}
-        for line in self.lines:
+        for line_id in self.lines:
+            line = self.lines[line_id]
             ps = line['points']
-            # Line name, either using the line's name or generating one if direct connection 
-            if 'name' in line:
-                line_name = line['name']
-            else:
-                line_name = '{} - {}'.format(ps[0],ps[-1])
 
             # Iterate all points in the line
             for i in range(len(ps)):
@@ -34,17 +30,17 @@ class Graph:
                     n_data = self.points[ps[i-1]]
                     d = hypot(p_data['x']-n_data['x'],p_data['z']-n_data['z'])
                     if 'dest_a' in line:
-                        dat.append((ps[i-1],d,line['dest_a'],line_name))
+                        dat.append((ps[i-1],d,line['dest_a'],line_id))
                     else:
-                        dat.append((ps[i-1],d,self.get_dest(ps[0]),line_name))
+                        dat.append((ps[i-1],d,self.get_dest(ps[0]),line_id))
                 # Dest B
                 if i < len(ps) - 1:
                     n_data = self.points[ps[i+1]]
                     d = hypot(p_data['x']-n_data['x'],p_data['z']-n_data['z'])
                     if 'dest_b' in line:
-                        dat.append((ps[i+1],d,line['dest_b'],line_name))
+                        dat.append((ps[i+1],d,line['dest_b'],line_id))
                     else:
-                        dat.append((ps[i+1],d,self.get_dest(ps[-1]),line_name))
+                        dat.append((ps[i+1],d,self.get_dest(ps[-1]),line_id))
 
                 adjac_lis[p] = dat
 

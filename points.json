@@ -1,76 +1,62 @@
 {
+    "carson":{"name":"Carson",
+        "x":4200,"z":1750,"type":"stop",
+        "dest":"carson"
+    },
+    "carson-crossing-1":{
+        "x":4200,"z":2500,"type":"crossing"
+    },
     "csa_main":{
         "name":"CSA",
         "x":-6403,"z":3504,"type":"stopjunction",
-        "dest":".csa",
-        "dest_junction":".csa:j",
-        "horse":true
-    },
-    "little_leningrad":{
-        "name":["Little Leningrad","LL"],
-        "x":-6682,"z":3366,"type":"stop",
-        "dest":".ll"
-    },
-    "fuzzy_quarter":{
-        "name":["Fuzzy Quarter","FQ"],
-        "x":-5656,"z":2943,"type":"stop",
-        "dest":".fq",
+        "dest":".csa","dest_junction":".csa:j",
         "horse":true
     },
     "fq-crossing":{
         "x":-5637,"z":2911,"type":"crossing"
     },
-    "mount_september":{
-        "name":["Mount September","MtS"],
-        "x":-4947,"z":2215,"type":"stopjunction",
-        "dest":".september",
-        "dest_junction":".sept:thru"
-    },
-    "south_augusta":{
-        "name":["South Augusta","SA"],
-        "x":-6145,"z":3775,"type":"junction",
-        "dest":".sa",
-        "surface":true
-    },
-    "sawc":{
-        "name":["South Augusta Walled City","SAWC"],
-        "x":-6145,"z":3775,"type":"stop",
-        "dest":".sawc",
-        "surface":true
+    "fuzzy_quarter":{
+        "name":["Fuzzy Quarter","FQ"],
+        "x":-5656,"z":2943,"type":"stop",
+        "dest":"fq",
+        "horse":true
     },
     "mount_augusta-surface":{
         "name":["Mount Augusta (Surface)","MtA (Surface)"],
         "x":-6702,"z":3024,"type":"stop",
-        "dest":".mta",
+        "dest":"mta",
+        "surface":true
+    },
+    "mount_september":{
+        "name":["Mount September","MtS"],
+        "x":-4947,"z":2215,"type":"stopjunction",
+        "dest":"september",
+        "dest_junction":"sept:thru"
+    },
+    "mount_september-surface":{
+        "name":["Mount September (Surface)","MtS (Surface)"],
+        "x":-5575,"z":2320,"type":"stop",
+        "dest":"september",
         "surface":true
     },
     "september-crossing":{
         "x":-5575,"z":2023,"type":"crossing",
         "surface":true
     },
-    "mts_lazuli":{
-        "name":["MtS Lazuli","Lazuli"],
-        "x":-5575,"z":2320,"type":"stop",
-        "dest":".mts:lazuli",
-        "surface":true
+    "little_hellsinki":{
+        "name":["Little Hellsinki","LHell"],
+        "x":-5082,"z":3636,"type":"stop",
+        "dest":"lhell"
     },
-    "mts_southfarms":{
-        "name":["MtS South Farms","South Farms"],
-        "x":-4938,"z":2386,"type":"stop",
-        "dest":".mts-southfarms",
-        "surface":true
+    "little_leningrad":{
+        "name":["Little Leningrad","LL"],
+        "x":-6682,"z":3366,"type":"stop",
+        "dest":"ll"
     },
-    "mount_september-surface":{
-        "name":["Mount September (Surface)","MtS (Surface)"],
-        "x":-5575,"z":2320,"type":"stop",
-        "dest":".september",
-        "surface":true
-    },
-    "mts_eastvillage":{
-        "name":["MtS East Villge","East Village"],
-        "x":-4868,"z":2185,"type":"stop",
-        "dest":".mts:eastvillage",
-        "surface":true
+    "little_mushie":{
+        "name":["Little Mushie","LMushie","LMush"],
+        "x":-2711,"z":3636,"type":"stop",
+        "dest":"lmushie"
     },
     "little_ukraine":{
         "name":["Little Ukraine","LUk"],
@@ -78,87 +64,9 @@
         "dest":".luk",
         "surface":true
     },
-    "little_hellsinki":{
-        "name":["Little Hellsinki","LHell"],
-        "x":-5082,"z":3636,"type":"stop",
-        "dest":".lhell"
-    },
-    "little_mushie":{
-        "name":["Little Mushie","LMushie","LMush"],
-        "x":-2711,"z":3636,"type":"stop",
-        "dest":".lmushie"
-    },
     "pripyat":{
         "name":"Pripyat",
         "x":6250,"z":2400,"type":"stop",
-        "dest":".pripyat"
-    },
-    "impasse":{
-        "name":"Impasse",
-        "x":-6678,"z":-5127,"type":"stop",
-        "dest":".impasse"
-    },
-    "lusitania-junction":{
-        "x":-6711,"z":-3600,"type":"crossing"
-    },
-    "lusitania":{
-        "name":"Lusitania",
-        "x":-7748,"z":-3540,"type":"stop",
-        "dest":".lusitania"
-    },
-    "atlantis-junction":{
-        "x":-6711,"z":-2700,"type":"crossing"
-    },
-    "atlantis":{
-        "name":"Atlantis",
-        "x":-7102,"z":-2764,"type":"stop",
-        "dest":".atlantis"
-    },
-    "el_norte":{
-        "name":"El Norte",
-        "x":-6382,"z":-2052,"type":"stop",
-        "dest":".el_norte"
-    },
-    "el_capitolio":{
-        "name":"El Capitolio",
-        "x":-6340,"z":-1550,"type":"stop",
-        "dest":".el_capitolio"
-    },
-    "kings_landing_junction":{
-        "x":-6700,"z":0,"type":"crossing"
-    },
-    "christmas_junction":{
-        "x":-6700,"z":800,"type":"crossing"
-    },
-    "mount_augusta":{
-        "name":["Mount Augusta","MtA"],
-        "x":-6713,"z":2955,"type":"stop",
-        "dest":".mta"
-    },
-    "westminster":{
-        "name":"Westminster",
-        "x":-7000,"z":5000,"type":"stop",
-        "dest":".westminster"
-    },
-    "airhaven":{
-        "name":"Airhaven",
-        "x":-5667,"z":9115,"type":"stop",
-        "dest":".airhaven"
-    },
-    "hjaltland":{
-        "name":"Hjaltland",
-        "x":-2941,"z":10794,"type":"stop",
-        "dest":".hjaltland"
-    },
-    "carson":{
-        "name":"Carson",
-        "x":4200,"z":1750,"type":"stop",
-        "dest":".carson"
-    },
-    "carson-switch-1":{
-        "x":4200,"z":2340,"type":"crossing"
-    },
-    "carson-switch-2":{
-        "x":4200,"z":2500,"type":"crossing"
+        "dest":"pripyat"
     }
 }

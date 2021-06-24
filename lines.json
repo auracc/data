@@ -1,31 +1,30 @@
 {   
-    "carson-prip":{"points":["carson-crossing-1","carson"]},
-    "mts-monorail":{"points":["september-crossing","mount_september-surface"]},
-
+    "carson-prip" :{"points":[{"id":"carson-crossing-1"},{"id":"carson"}]},
+    "mts_monorail":{"points":[{"id":"september-crossing"},{"id":"mount_september-surface"}]},
     "csr":{"dest_a":"csr:west","dest_b":"csr:east",
         "points":[
-            "little_leningrad",
-            "csa_main",
-            "fuzzy_quarter",
-            "fq-crossing",
-            "mount_september"
+            {"id":"little_leningrad"},
+            {"id":"csa_main"},
+            {"id":"fuzzy_quarter"},
+            {"id":"fq-crossing"},
+            {"id":"mount_september"}
         ]
     },
     "gor":{"dest_a":"gor:north","dest_b":"gor:south","surface":true,
      "points":[
-        "september-crossing",
-        "mount_augusta-surface",
-        "little_ukraine",
-        "csa_main"
+        {"id":"september-crossing"},
+        {"id":"mount_augusta-surface"},
+        {"id":"little_ukraine"},
+        {"id":"csa_main"}
      ]
     },
     "mta-pripyat":{"dest_a":"prip:west","dest_b":"prip:east",
         "points":[
-            "csa_main",
-            "little_hellsinki",
-            "little_mushie",
-            "carson-crossing-1",
-            "pripyat"
+            {"id":"csa_main"},
+            {"id":"little_hellsinki"},
+            {"id":"little_mushie"},
+            {"id":"carson-crossing-1"},
+            {"id":"pripyat"}
         ]
     }
 }

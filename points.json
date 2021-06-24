@@ -9,7 +9,7 @@
     "csa_main":{
         "name":"CSA",
         "x":-6403,"z":3504,"type":"stopjunction",
-        "dest":".csa","dest_junction":".csa:j",
+        "dest":".csa","dest_junction":"csa:j",
         "horse":true
     },
     "fq-crossing":{

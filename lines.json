@@ -18,6 +18,18 @@
         {"id":"csa_main"}
      ]
     },
+    "hits":{"dest_a":"hits:north","dest_b":"hits:south",
+        "points":[
+            {"id":"impasse"},
+            {"id":"christmas_junction"}
+        ]
+    },
+    "hits-mts":{
+        "points":[
+            {"id":"christmas_junction"},
+            {"id":"mount_september","line_dest":"hits"}
+        ]
+    },
     "mta-pripyat":{"dest_a":"prip:west","dest_b":"prip:east",
         "points":[
             {"id":"csa_main"},

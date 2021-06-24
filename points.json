@@ -6,6 +6,9 @@
     "carson-crossing-1":{
         "x":4200,"z":2500,"type":"crossing"
     },
+    "christmas_junction": {
+        "x":-6700,"z":500,"type":"crossing"
+    },
     "csa_main":{
         "name":"CSA",
         "x":-6403,"z":3504,"type":"stopjunction",
@@ -29,7 +32,7 @@
     },
     "mount_september":{
         "name":["Mount September","MtS"],
-        "x":-4947,"z":2215,"type":"stopjunction",
+        "x":-4947,"z":2215,"type":"stop",
         "dest":"september",
         "dest_junction":"sept:thru"
     },
@@ -68,5 +71,10 @@
         "name":"Pripyat",
         "x":6250,"z":2400,"type":"stop",
         "dest":"pripyat"
+    },
+    "impasse":{
+        "name":"Impasse",
+        "x":6700,"z":-5127,"type":"stop",
+        "dest":"impasse"
     }
 }

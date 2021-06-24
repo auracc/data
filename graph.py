@@ -26,29 +26,38 @@ class Graph:
                 if p_id in adjac_lis:  # check if this point has already been added
                     dat = adjac_lis[p_id]
 
+                dest_append = ''
+                if 'line_dest' in point:
+                    dest_append = '{} '.format(point['line_dest'])
                 # Dest A
                 if i > 0:
                     a_id = ps[i-1]['id']
                     n_data = self.points[a_id]
                     d = hypot(p_data['x']-n_data['x'],p_data['z']-n_data['z'])
                     if 'dest_a' in point:
-                        dat.append((a_id,d,point['dest_a'],line_id))
+                        dat.append((a_id,d,dest_append+point['dest_a'],line_id))
                     elif 'dest_a' in line:
-                        dat.append((a_id,d,line['dest_a'],line_id))
+                        dat.append((a_id,d,dest_append+line['dest_a'],line_id))
                     else:
-                        dat.append((a_id,d,self.get_dest(ps[0]['id']),line_id))
+                        dst = ''
+                        if self.get_dest(ps[0]['id']) != None:
+                            dst = self.get_dest(ps[0]['id'])
+                        dat.append((a_id,d,dest_append+dst,line_id))
                 # Dest B
                 if i < len(ps) - 1:
                     b_id = ps[i+1]['id']
                     n_data = self.points[ps[i+1]['id']]
                     d = hypot(p_data['x']-n_data['x'],p_data['z']-n_data['z'])
                     if 'dest_b' in point:
-                        dat.append((b_id,d,point['dest_b'],line_id))
+                        dat.append((b_id,d,dest_append+point['dest_b'],line_id))
                     elif 'dest_b' in line:
-                        dat.append((b_id,d,line['dest_b'],line_id))
+                        dat.append((b_id,d,dest_append+line['dest_b'],line_id))
                     else:
-                        dat.append((b_id,d,self.get_dest(ps[-1]['id']),line_id))
-
+                        dst = ''
+                        if self.get_dest(ps[-1]['id']) != None:
+                            dst = self.get_dest(ps[-1]['id'])
+                        dat.append((b_id,d,dest_append+dst,line_id))
+                
                 adjac_lis[p_id] = dat
 
         return adjac_lis
@@ -70,7 +79,6 @@ class Graph:
     def add_to_dest(self,dest,n,stop=False):
         if n == None:
             return dest
-            
         to_append = n
         extra = None
         if n in self.points:
@@ -130,8 +138,6 @@ class Graph:
             if n == stop:
                 reconst_path = []
                 dest = []
-
-                #print(par)
  
                 while par[n][0] != n:
                     reconst_path.append(n)
@@ -147,9 +153,9 @@ class Graph:
                 for point in reconst_path:
                     this_line = par[point][2]
                     this_dest = par[point][1]
-                    
+
                     # Detect a line change
-                    if this_line != last_line: 
+                    if this_line != last_line:
                         if this_line != None and last_point != start:
                             dest = self.add_to_dest(dest,last_point)
 
@@ -163,7 +169,6 @@ class Graph:
                 dest = self.add_to_dest(dest,stop,stop=True)
 
                 print('Path found: {}'.format(reconst_path))
-                #print(dest)
                 print("/dest {}".format(" ".join(dest)))
                 return reconst_path,dest
 

@@ -75,7 +75,7 @@
     "lumiere":{
         "name":["Lumière","Lumiere"],
         "x":-7850,"z":-2750,"type":"junctionstop",
-        "dest":"lumiere","stopdest":"lumiere:exit"
+        "dest":"lumiere","dest_stop":"lumiere:exit"
     },
     "pripyat":{
         "name":"Pripyat",

@@ -24,6 +24,11 @@
         "dest":"fq",
         "horse":true
     },
+    "impasse":{
+        "name":"Impasse",
+        "x":6700,"z":-5127,"type":"stop",
+        "dest":"impasse"
+    },
     "mount_augusta-surface":{
         "name":["Mount Augusta (Surface)","MtA (Surface)"],
         "x":-6702,"z":3024,"type":"stop",
@@ -67,14 +72,14 @@
         "dest":".luk",
         "surface":true
     },
+    "lumiere":{
+        "name":["Lumière","Lumiere"],
+        "x":-7850,"z":-2750,"type":"junctionstop",
+        "dest":"lumiere","stopdest":"lumiere:exit"
+    },
     "pripyat":{
         "name":"Pripyat",
         "x":6250,"z":2400,"type":"stop",
         "dest":"pripyat"
-    },
-    "impasse":{
-        "name":"Impasse",
-        "x":6700,"z":-5127,"type":"stop",
-        "dest":"impasse"
     }
 }

@@ -21,6 +21,7 @@
     "hits":{"dest_a":"hits:north","dest_b":"hits:south",
         "points":[
             {"id":"impasse"},
+            {"id":"lumiere","line_dest":"hits"},
             {"id":"christmas_junction"}
         ]
     },

@@ -21,13 +21,19 @@
     "hits":{"dest_a":"hits:north","dest_b":"hits:south",
         "points":[
             {"id":"impasse"},
-            {"id":"lumiere","line_dest":"hits"},
-            {"id":"christmas_junction"}
+            {"id":"hits_lumiere"},
+            {"id":"hits_christmas_junction"}
+        ]
+    },
+    "hits-lumiere":{
+        "points":[
+            {"id":"lumiere","line_dest":"lumiere:hits"},
+            {"id":"hits_lumiere"}
         ]
     },
     "hits-mts":{
         "points":[
-            {"id":"christmas_junction"},
+            {"id":"hits_christmas_junction"},
             {"id":"mount_september","line_dest":"hits"}
         ]
     },

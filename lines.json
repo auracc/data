@@ -18,7 +18,7 @@
         {"id":"csa_main"}
      ]
     },
-    "hits":{"dest_a":"hits:north","dest_b":"hits:south",
+    "hits":{"dest_a":"hits:north impasse","dest_b":"hits:south",
         "points":[
             {"id":"impasse"},
             {"id":"hits_lumiere"},
